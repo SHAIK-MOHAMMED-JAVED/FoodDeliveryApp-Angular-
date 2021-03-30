@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <table class="table ">
+       
+            <th>Restaurent Name</th>
+            <th>Restaurent ID</th>
+            <th>Food Item Name</th>
+            <th>Price</th>
+       
+        <tr *ngFor="let fooditem of foodArray">
+            <td>{{fooditem.restname}}</td>
+            <td>{{fooditem.RestaurentID}}</td>
+            <td>{{fooditem.fooditemname}}</td>
+            <td>{{fooditem.Price}}</td>
+           <td>
+               <button class="btn bg-success text-dark ">Update</button>
+           </td>
+           <td>
+            <button class="btn bg-danger text-dark">X</button>
+        </td>
+        </tr>
+    </table>
+</div>
+

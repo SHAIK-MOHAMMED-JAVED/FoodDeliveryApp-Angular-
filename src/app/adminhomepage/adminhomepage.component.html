@@ -1,0 +1,25 @@
+
+<div style="background-color: #021e2c;" class="container-fluid ">
+    <div class="row">
+      <div class="col-sm-6">
+        <h4 class="text-light p-4">welcome,{{username}}</h4>
+      </div>
+      <div class="col-sm-6 p-4">
+        <button class="btn btn-danger float-end " (click)="logout()" >Logout</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3">
+        <a class="nav-link text-dark" routerLink="addfooditem">Add Food Items</a>
+        <a class="nav-link text-dark" routerLink="readfooditem">Read Food Items</a>
+    </div>
+    <div class="col-md-6">
+      
+        <router-outlet></router-outlet>
+       
+    </div>
+    <div class="col-md-3"></div>
+</div>
+  

@@ -1,0 +1,80 @@
+
+<div class="card bg-dark text-white">
+  <img style="height: 600px; opacity: 0.3;" src="../../assets/loginimage.jpeg" class="card-img" alt="Background-Image">
+  <app-precautions></app-precautions>
+  <app-footer></app-footer>
+  <div class="card-img-overlay">
+    <div class="row ">
+ 
+      <div class="col-sm-6"> 
+        
+      </div>
+      <div style="background-color: #c4dfe6;" class="col-sm-6 ">
+        <div class="row">
+          <div class="col-sm-8"> 
+            <div  style="color: rgb(19, 17, 18); font-weight: normal;" class="text-center fs-4 ">Login</div>
+  
+            <form #formRef='ngForm'(ngSubmit)="onSubmit(formRef)" class="row g-3 mx-auto " >
+      
+            
+            <!--radio buttons-->
+            <div class="container form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="usertype" id="inlineRadio1" value="user" ngModel>
+                    <label class="form-check-label" style="color: rgb(19, 17, 18);" for="inlineRadio1">User</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="usertype" id="inlineRadio2" value="admin" ngModel>
+                    <label style="color: rgb(19, 17, 18);" class="form-check-label " for="inlineRadio2">Admin</label>
+                  </div>
+            </div>
+              <!--user name-->
+              <div class="form-group col-md-8">
+                <label for="un" class="form-label" style="color: rgb(19, 17, 18);" >Username</label>
+                <input type="text" class="form-control" id="un" name="username" placeholder="Username" required #ref1="ngModel" ngModel autocomplete="off"> 
+              </div>
+        <!--user name validation-->
+        <div class="text-danger" *ngIf="(ref1.touched || formRef.submitted) && (ref1.errors?.required)">
+          Please enter the username
+        </div>
+        
+        <!--password-->
+              <div class="col-md-8">
+                <label for="pw" class="form-label" style="color: rgb(19, 17, 18);" >Password</label>
+                <input type="password" class="form-control" id="pw" name="password" placeholder="password" required #ref2="ngModel" ngModel autocomplete="off">
+              </div>
+              <!--password validation-->
+              <div class="text-danger" *ngIf="(ref2.touched || formRef.submitted)&& (ref2.errors?.required)">
+                Please enter the password
+              </div>
+        
+        
+              <div class="col-12 my-5">
+                <button  type="submit" class="btn btn-warning " (ngSubmit)="onSubmit(formRef)">Login</button>
+              </div>
+        
+             
+        </form>
+       
+      </div>
+          <div class="col-sm-4">
+            <img style="height: 350px; width: 200px" src="../../assets/bhagyaloginimg.jpg" class="mt-4" alt="">
+          </div>
+        </div>
+<div class="row">
+  
+  <div class="col-sm-6 ">
+    <p class="text-dark">Don't have an account? Please Register First.</p>
+    <button class="btn  mb-3 btn-warning" (click)="register()">Register here!!</button>
+  </div>
+  <div class="col-sm-6"></div>
+  
+
+</div>
+</div>
+
+
+
+
+
+
